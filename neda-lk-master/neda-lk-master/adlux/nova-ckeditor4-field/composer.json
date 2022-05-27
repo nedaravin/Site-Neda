@@ -1,0 +1,36 @@
+{
+    "name": "adlux/nova-ckeditor4-field",
+    "description": "This nova package allows you to use CKEditor 4 for text areas.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "ckeditor"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Web Communications",
+            "email": "web@wayne.edu"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adlux\\Nova\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Adlux\\Nova\\CKEditorFieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

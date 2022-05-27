@@ -1,0 +1,40 @@
+footer {
+    background: #202b5d;
+    padding: 50px 0 0 0;
+    .social-list {
+        .list-inline-item {
+            @include rounded(50%);
+            background: #d8d8d8;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            line-height: 40px;
+            .fa {
+                font-size: 18px;
+            }
+            .fa-facebook {
+                color: #0d76cd;
+            }
+            .fa-youtube-play {
+                color: #e00a0a;
+            }
+            .fa-linkedin {
+                color: #2a2aff;
+            }
+        }
+    }
+    .nav-link {
+        color: $white;
+    }
+    .footer-secondary {
+        border-top: solid 1px #3e476f;
+        margin-top: 15px;
+        padding: 15px;
+        a {
+
+        }
+    }
+    a.adlux {
+        color: #f89b34;
+    }
+}

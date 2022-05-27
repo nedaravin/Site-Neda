@@ -1,0 +1,114 @@
+/* Base Styles -------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;;0,600;0,700;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    overflow-X: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Jost', sans-serif;
+    color: $body-color;
+    margin: 0 0 26px;
+    font-weight: 700;
+
+    a {
+        color: $body-color;
+    }
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+a {
+    color: $body-color;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    outline: none;
+}
+.link {
+    cursor: pointer;
+}
+
+.w-50px {
+    width: 50px;
+}
+
+$width: 9;
+@for $i from 1 through $width {
+    .mw-#{$i}00px {
+        max-width: #{$i}00px;
+    }
+}
+
+@for $i from 1 through $width {
+    .minw-#{$i}00px {
+        min-width: #{$i}00px;
+    }
+}
+
+.py-extra {
+    padding: 75px 0;
+}
+
+.nav-tab-custom {
+    .nav-link {
+        font-weight: 500;
+        border: none;
+        padding: 15px 60px;
+
+        &.active {
+            border-bottom: 2px solid $primary;
+            color: $primary;
+            font-weight: 600;
+        }
+    }
+}
+
+.modal-video {
+
+    .modal-dialog {
+        max-width: 800px;
+        margin: 30px auto;
+    }
+
+
+    .modal-body {
+        position: relative;
+        padding: 0px;
+    }
+
+    .close {
+        background: $white;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        right: -40px;
+        top: -8px;
+        z-index: 999;
+        font-size: 2rem;
+        font-weight: normal;
+        opacity: 1;
+
+    }
+}
+
+.adlux-message {
+    padding: 30px;
+    background: #ffedc4;
+    @include rounded(5px);
+    border: 1px solid #f7da9a;
+    .small {
+        font-size: 12px !important;
+    }
+}
+

@@ -1,0 +1,64 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    mailhog:
+      image: mailhog/mailhog:latest
+      container_name: neda-lk-mailhog
+      ports:
+        - "3002:8025"
+
+    redis:
+      image: redis:alpine
+      container_name: neda-lk-redis
+
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      container_name: neda-lk-phpmyadmin
+      environment:
+        - MYSQL_DATABASE=database
+        - MYSQL_USER=username
+        - MYSQL_PASSWORD=password
+        - PMA_HOST=mysql
+      ports:
+        - "3001:80"
+      volumes:
+        - neda-lk-phpmyadmin-data:/sessions
+
+    mysql:
+      image: mysql:8.0
+      container_name: neda-lk-mysql
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/mysql_prod:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=database
+        - MYSQL_USER=username
+        - MYSQL_PASSWORD=password
+      ports:
+        - "3009:3306"
+
+    webserver:
+      image: nginx:alpine
+      container_name: neda-lk-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "3000:80"
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: neda-lk-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
+
+volumes:
+  neda-lk-phpmyadmin-data:

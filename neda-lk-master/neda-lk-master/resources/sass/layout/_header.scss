@@ -1,0 +1,96 @@
+header {
+    position: absolute;
+    background: $white;
+    top: 30px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    @include respond-below(md) {
+        top: 0px;
+    }
+}
+.navbar-nav-sub {
+    font-size: 12px;
+    .nav-item {
+        .nav-link {
+            padding-right: 10px;
+        }
+    }
+    .active {
+        color: $primary;
+        font-weight: bold;
+    }
+}
+.navbar-brand {
+    @include respond-below(md) {
+        padding-left: 30px;
+    }
+}
+.navbar-primary {
+    margin: 0 -15px;
+    background: #fafafa;
+}
+.mobile-menu-link {
+    position: absolute;
+    top: 24px;
+    left: 30px;
+}
+.navbar {
+    .dropdown {
+        padding-right: 10px;
+
+        &:after {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            margin-left: .3em;
+            content: '\f107';
+            vertical-align: top;
+            border: none;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-weight: 900;
+            top: 12px;
+            right: 12px;
+        }
+    }
+    .dropdown-menu {
+        min-width: 200px;
+        @include transition();
+        color: #333;
+        border: none;
+        outline: none !important;
+        font-size: 12px;
+        box-shadow: 0 0rem 1.5rem rgba(0,0,0,0.175);
+
+        &:before {
+            display: block;
+            width: 0;
+            height: 0;
+            content: '';
+            border-right: 7px solid transparent;
+            border-bottom: 8px solid #f1f1f1;
+            border-left: 7px solid transparent;
+            position: absolute;
+            top: -8px;
+            left: 30px;
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: .7rem 1.5rem;
+            clear: both;
+            font-weight: 400;
+            color: #212529;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            &:hover {
+                color: $primary;
+                text-decoration: none;
+                background-color: #f8f9fa;
+            }
+        }
+    }
+}

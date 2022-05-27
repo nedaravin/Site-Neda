@@ -1,0 +1,138 @@
+// Buttons =====================================================================
+
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    @include border-radius(0);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.btn-primary , .btn-outline-primary {
+    padding: 15px 30px;
+}
+.btn-sm {
+    padding: 8px 30px;
+}
+.btn-outline-primary {
+
+}
+
+// Navs ========================================================================
+
+.nav,
+.breadcrumb,
+.pagination {
+    font-size: $font-size-sm;
+}
+
+.dropdown-menu {
+    font-size: $font-size-sm;
+}
+
+// Indicators ==================================================================
+
+.alert {
+    color: $white;
+    font-size: $font-size-sm;
+
+    &, p {
+        font-family: $font-family-sans-serif;
+    }
+
+    a, .alert-link {
+        color: #fff;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    @each $color, $value in $theme-colors {
+        &-#{$color} {
+            @if $enable-gradients {
+                background: $value linear-gradient(0deg, mix($body-bg, $value, 15%), $value) repeat-x;
+            } @else {
+                background-color: $value;
+            }
+        }
+    }
+
+    &-light {
+        &,
+        & a,
+        & .alert-link {
+            color: $body-color;
+        }
+    }
+}
+
+.badge {
+    vertical-align: bottom;
+}
+
+// Forms =======================================================================
+
+.form-control {
+    border: 1px solid #bdc9d5;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $body-color;
+    background-color: $white;
+    background-clip: padding-box;
+    @include rounded(.25rem);
+    box-shadow: none;
+    -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+label {
+    font-weight: 500;
+}
+
+.list-group {
+    font-size: $font-size-sm;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+
+}
+
+.number {
+    color: $gray-500;
+    font-weight: normal;
+    font-size: 0.6875rem;
+}
+
+.card-header {
+    .number {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.custom-control {
+    &.custom-radio {
+        margin-bottom: 0.5rem;
+    }
+
+    label {
+        font-weight: normal;
+    }
+}
+
+span.field-number {
+    color: lighten($primary, 10%);
+}
+h5 span.field-number {
+    font-size: 20px !important;
+}

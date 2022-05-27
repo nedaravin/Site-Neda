@@ -1,0 +1,82 @@
+@import "base/variables";
+
+@import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css';
+
+
+// 1- Import bootstrap framework
+@import '~bootstrap/scss/bootstrap';
+
+// 2 - Import plugins
+@import 'plugins/index';
+
+// 3 - Import base style, custom variables and mixins
+@import 'base/index';
+
+// 4 - Import modules
+@import 'components/index';
+
+// 5 - Import layout  styles
+@import 'layout/index';
+
+// 6 - Forms
+@import 'forms/index';
+
+
+
+:lang(si) {
+    body {
+        font-family: 'Abhaya Libre', serif;
+        font-size: 16px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Abhaya Libre', serif;
+    }
+    .carousel-caption {
+        .slider-text {
+            h5 {
+                font-size: 24px;
+            }
+            div {
+                font-size: 22px;
+            }
+        }
+    }
+    .navbar {
+        .dropdown-menu {
+            font-size: 16px;
+        }
+    }
+    .inner-content {
+        p {
+            font-size: 20px !important;
+            line-height: 32px;
+        }
+        span {
+            font-size: 20px !important;
+            line-height: 32px;
+        }
+    }
+    .list-sidebar {
+        .nav {
+            .nav-item {
+                .nav-link {
+                    font-size: 20px !important;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+    .featured-links {
+        .featured-links-item {
+            h3 {
+                margin-bottom: 8px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 17px;
+            }
+        }
+    }
+}

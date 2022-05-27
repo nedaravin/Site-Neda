@@ -1,0 +1,22 @@
+.card {
+    border: none;
+    box-shadow: 0 10px 40px 0 rgba(49, 49, 49, 0.1);
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+    }
+    .card-link {
+        color: $body-color-secondary;
+        font-weight: 500;
+        .fa {
+            @include transition();
+        }
+        &:hover {
+            .fa {
+                transform: translate(6px, 0);
+            }
+        }
+    }
+}

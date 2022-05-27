@@ -1,0 +1,28 @@
+.admin {
+    padding-top: 30px;
+    .main-navigation {
+        @include respond-above(md) {
+            top: 70px;
+        }
+    }
+}
+.admin-panel {
+    height: 30px;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    top: 0;
+    font-size: 14px;
+    line-height: 30px;
+    i {
+        line-height: 30px;
+    }
+}
+.slide-edit-btn {
+    position: absolute;
+    z-index: 1000;
+    background: $white;
+    right: 100px;
+    top: 100px;
+}
+
